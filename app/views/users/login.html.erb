@@ -1,0 +1,17 @@
+<h1>Login</h1>
+
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<%= form_with url: create_session_path do |form| %>
+
+<%= form.label :email %>
+    <%= form.email_field :email, required: true %>
+    </br>
+<%= form.label :password %>
+    <%= form.password_field :password, required: true%>
+    </br>
+
+    <%= form.submit "Zaloguj się" %>
+<% end %>
